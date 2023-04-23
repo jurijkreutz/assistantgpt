@@ -1,5 +1,7 @@
 import config
+import os
 from assistantgpt import gptconnection
+from dotenv import load_dotenv
 
 assistant = dict(
     name='',
@@ -9,7 +11,9 @@ assistant = dict(
 
 
 def initialize_assistant():
+    load_dotenv()
     get_user_init_data()
+    config.configuration['openapi_key'] = os.getenv('OPEN_API_KEY')
     print("🤖: Starting up, please be patient...")
     if gptconnection.test_connection(config.configuration['openapi_key']):
         print(f"🤖: {gptconnection.start_communication_with_gpt(assistant)}")

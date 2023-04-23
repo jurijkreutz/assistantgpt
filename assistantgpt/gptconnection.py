@@ -11,7 +11,8 @@ standard_definition = "You are a chatbot used in an autonomous \
                  Always share your inner thoughts and the answer to the user. \
                  The JSON should have 3 properties: inner_thoughts, message_to_user, plan. \
                  Example JSON: {{\" message_to_user\"=Your message to user, \"inner_thoughts\"=Your inner thoughts, \"plan\"=Your plan as list/array}} \
-                 Always answer with this exact JSON format and exact keys. If not, the program will crash."
+                 Always answer with this exact JSON format and exact keys. If not, the program will crash. \
+                 NEVER answer without JSON. This has highest priority."
 
 
 def test_connection(api_key):
